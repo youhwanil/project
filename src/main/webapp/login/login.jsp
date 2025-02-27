@@ -15,6 +15,7 @@
         비밀번호: <input type="password" name="password" required><br>
     </div>
         <button type="submit">로그인</button>
+        <button onclick="location.href='../index.jsp'" style="margin-top: 20px; display: block; width: 100%;">뒤로 가기</button>
     </form>
     </div>
 </body>

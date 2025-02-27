@@ -8,12 +8,12 @@
 <body>
     <div class="write-container">
         <h2>글 작성</h2>
-        <form action="write_process.jsp" method="post" enctype="multipart/form-data">
-            <input type="text" name="title" placeholder="제목" required><br>
-            <textarea name="content" placeholder="내용을 입력하세요" required></textarea><br>
-            <input type="file" name="image"><br>
-            <button type="submit">작성</button>
+        <form action="write_process.jsp" method="post">
+            <input type="text" name="title" class="input-field" placeholder="제목" required><br>
+            <textarea name="content" class="textarea-field" placeholder="내용을 입력하세요" required></textarea><br>
+            <button type="submit" class="submit-btn">작성</button>
         </form>
+        <button onclick="location.href='../index.jsp'" style="margin-top: 20px; display: block; width: 100%;">뒤로 가기</button>
     </div>
 </body>
 </html>

@@ -241,3 +241,24 @@ input[type="nickname"] {
     box-sizing: border-box;
     appearance: none; /* 브라우저 기본 스타일 제거 */
 }
+
+/* 뒤로 가기 버튼 스타일 */
+.back-btn {
+    margin-top: 20px;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 10px
+}
+
+.back-btn:hover {
+    background-color: #5a6268;
+}

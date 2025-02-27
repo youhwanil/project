@@ -45,7 +45,10 @@
                 <input type="text" name="nickname" placeholder="닉네임" required>
             </div>
             <button type="submit">가입하기</button>
+            <button onclick="location.href='../index.jsp'" style="margin-top: 20px; display: block; width: 100%;">뒤로 가기</button>
             <p class="login-link">이미 계정이 있으신가요? <a href="login.jsp">로그인</a></p>
+            
+            
         </form>
     </div>
 </body>
