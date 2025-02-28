@@ -1,15 +1,21 @@
-/* 전체 페이지 기본 스타일 */
+/* ====================== */
+/* 🔹 기본 스타일 설정 🔹 */
+/* ====================== */
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: Arial, sans-serif; /* 기본 폰트 설정 */
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #f4f4f4; /* 배경색 */
 }
 
-/* 컨테이너 */
+/* ====================== */
+/* 🔹 컨테이너 스타일 🔹 */
+/* ====================== */
+
 .container {
-    width: 50%;
-    margin: 50px auto;
+    width: 50%; /* 너비 설정 */
+    margin: 50px auto; /* 중앙 정렬 */
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -17,7 +23,10 @@ body {
     background-color: #fff;
 }
 
-/* 헤더 스타일 */
+/* ====================== */
+/* 🔹 헤더 및 내비게이션 스타일 🔹 */
+/* ====================== */
+
 header {
     background-color: #007BFF;
     padding: 15px;
@@ -27,14 +36,14 @@ header {
 }
 
 nav {
-    text-align: center;
+    text-align: right;
     margin-top: 10px;
 }
 
 nav a {
     text-decoration: none;
-    color: white;
-    margin: 0 15px;
+    color: black; /* 링크 색상 */
+    margin-left: 10px;
     font-size: 18px;
 }
 
@@ -42,14 +51,18 @@ nav a:hover {
     text-decoration: underline;
 }
 
-/* 제목 스타일 */
+/* ====================== */
+/* 🔹 제목 스타일 🔹 */
+/* ====================== */
+
 h2 {
     text-align: center;
     color: #333;
 }
 
-/* 입력 폼 스타일 */
-
+/* ====================== */
+/* 🔹 입력 필드 및 버튼 스타일 🔹 */
+/* ====================== */
 
 .input-field, .textarea-field {
     width: 100%;
@@ -65,13 +78,25 @@ h2 {
     resize: none;
 }
 
-/* 버튼 스타일 */
+/* 버튼 기본 스타일 */
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
 
-.submit-btn:hover {
+button:hover {
     background-color: #0056b3;
 }
 
-/* 게시글 리스트 스타일 */
+/* ====================== */
+/* 🔹 게시글 목록 스타일 🔹 */
+/* ====================== */
+
 ul {
     list-style: none;
     padding: 0;
@@ -96,7 +121,10 @@ ul li a:hover {
     text-decoration: underline;
 }
 
-/* 로그인 & 회원가입 페이지 스타일 */
+/* ====================== */
+/* 🔹 로그인 & 회원가입 스타일 🔹 */
+/* ====================== */
+
 .auth-container {
     width: 30%;
     margin: 100px auto;
@@ -105,6 +133,7 @@ ul li a:hover {
     border-radius: 8px;
     background-color: #fff;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
 .auth-container h2 {
@@ -125,47 +154,32 @@ ul li a:hover {
     font-size: 16px;
 }
 
-.auth-container .submit-btn {
-    background-color: #28a745;
-}
+/* ====================== */
+/* 🔹 로그인 폼 스타일 🔹 */
+/* ====================== */
 
-.auth-container .submit-btn:hover {
-    background-color: #218838;
-}
-nav {
-    text-align: right;
-}
-
-nav a {
-    color: black;  /* 글씨 색을 검정색으로 변경 */
-    margin-left: 10px;
-    text-decoration: none;
-}
 .login-container {
-            width: 300px;
-            margin: 100px auto;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        .form-group {
-            margin-bottom: 15px;
-        }
-        input[type="text"], input[type="password"] {
-            width: 95%;
-            padding: 8px;
-            margin-top: 5px;
-        }
-        button {
-            width: 100%;
-            padding: 10px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 3px;
-            cursor: pointer;
-        }
-        
+    width: 300px;
+    margin: 100px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+input[type="text"], input[type="password"] {
+    width: 95%;
+    padding: 8px;
+    margin-top: 5px;
+}
+
+/* ====================== */
+/* 🔹 블로그 컨텐츠 스타일 🔹 */
+/* ====================== */
+
 .blog-container {
     display: flex;
     flex-direction: column;
@@ -188,9 +202,12 @@ nav a {
 
 .blog-post p {
     color: #555;
-}        
+}
 
-/* 글쓰기 페이지 스타일 */
+/* ====================== */
+/* 🔹 글쓰기 페이지 스타일 🔹 */
+/* ====================== */
+
 .write-container {
     width: 50%;
     margin: 50px auto;
@@ -227,22 +244,41 @@ nav a {
     background-color: #0056b3;
 }
 
-input[type="text"],
-input[type="password"],
-input[type="email"],
-input[type="nickname"] {
-    width: 100% !important; /* 강제 적용 */
-    max-width: 300px; /* 부모 크기 초과 방지 */
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-    box-sizing: border-box;
-    appearance: none; /* 브라우저 기본 스타일 제거 */
+/* ====================== */
+/* 🔹 검색 기능 스타일 🔹 */
+/* ====================== */
+
+.search-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-bottom: 20px;
 }
 
-/* 뒤로 가기 버튼 스타일 */
+.search-container input {
+    width: 200px;
+    padding: 5px;
+}
+
+.search-container button {
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* 상단 정렬 */
+.top-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* ====================== */
+/* 🔹 뒤로 가기 버튼 🔹 */
+/* ====================== */
+
 .back-btn {
     margin-top: 20px;
     display: block;
@@ -255,8 +291,6 @@ input[type="nickname"] {
     text-align: center;
     font-size: 16px;
     cursor: pointer;
-    margin-top: 10px;
-    margin-bottom: 10px
 }
 
 .back-btn:hover {

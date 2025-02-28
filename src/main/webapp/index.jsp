@@ -38,33 +38,6 @@
 <head>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <title>Mini Blog</title>
-    <style>
-        .search-container {
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-
-        .search-container input {
-            width: 200px;
-            padding: 5px;
-        }
-
-        .search-container button {
-            padding: 5px 10px;
-            font-size: 14px;
-            cursor: pointer;
-        }
-
-        .top-section {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            width: 100%;
-        }
-    </style>
 </head>
 <body>
     <h1>Mini Blog</h1>
