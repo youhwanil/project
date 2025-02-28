@@ -1,63 +1,33 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*" %>
 
 <%
     request.setCharacterEncoding("UTF-8");
 
-    // 로그인 확인
-    Integer sessionUserId = (Integer) session.getAttribute("userId");
-    if (sessionUserId == null) {
-%>
-        <script>
-            alert("로그인이 필요합니다.");
-            history.back();
-        </script>
-<%
-        return;
-    }
-
-    // 게시글 정보 가져오기
-    String postIdStr = request.getParameter("id");
+    // 입력값 가져오기
+    String postId = request.getParameter("postId");
     String title = request.getParameter("title");
     String content = request.getParameter("content");
 
-    if (postIdStr == null || title == null || content == null || title.trim().isEmpty() || content.trim().isEmpty()) {
-%>
-        <script>
-            alert("잘못된 요청입니다.");
-            history.back();
-        </script>
-<%
+    if (postId == null || postId.trim().isEmpty()) {
+        response.sendRedirect("index.jsp");
         return;
     }
-
-    int postId = Integer.parseInt(postIdStr);
 
     // DB 연결
     Class.forName("com.mysql.cj.jdbc.Driver");
     Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3309/blog", "root", "1234");
 
-    // 게시글 작성자 확인
-    PreparedStatement checkStmt = conn.prepareStatement("SELECT userid FROM posts WHERE id = ?");
-    checkStmt.setInt(1, postId);
-    ResultSet rs = checkStmt.executeQuery();
+    // 게시글 수정 쿼리 실행
+    PreparedStatement pstmt = conn.prepareStatement("UPDATE posts SET title = ?, content = ? WHERE id = ?");
+    pstmt.setString(1, title);
+    pstmt.setString(2, content);
+    pstmt.setInt(3, Integer.parseInt(postId));
+    pstmt.executeUpdate();
 
-    if (!rs.next() || rs.getInt("userid") != sessionUserId) {
-%>
-        <script>
-            alert("본인의 게시글만 수정할 수 있습니다.");
-            history.back();
-        </script>
-<%
-        return;
-    }
+    pstmt.close();
+    conn.close();
 
-    // 게시글 수정
-    PreparedStatement updateStmt = conn.prepareStatement("UPDATE posts SET title = ?, content = ? WHERE id = ?");
-    updateStmt.setString(1, title);
-    updateStmt.setString(2, content);
-    updateStmt.setInt(3, postId);
-    updateStmt.executeUpdate();
-
+    // 수정 후 게시글 상세 페이지로 이동
     response.sendRedirect("view.jsp?id=" + postId);
 %>
